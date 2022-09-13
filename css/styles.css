@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+    color:#36474f
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    background-color: #ebecf0;
+}
+
+.menu {
+    width: 100%;
+    display: flex; 
+    flex-direction: row;
+    justify-content:flex-start;
+    column-gap: 40px;
+    padding: 20px;
+    font-size: 1.2rem;
+    align-content: center;
+}
+
+a {
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.contlogo {
+    flex-grow:1;
+}
+
+.logo {
+    height: 50px; 
+}
+
+.logo:hover {
+    transform: scale(1.5);
+    animation: ease-in;
+}
+
+a:not(:first-child):hover {
+    transform: scale(1.2);
+    color: #6da3c2;
+    animation: ease-in;
+  }
+
+.contenedor {  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 0.5fr 1fr;
+    column-gap: 2%;
+    margin: 2% 10% 10% 10%;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "header header header"
+      "art1 art2 art3"
+      "faqs faqs faqs";
+}
+
+.header { 
+    grid-area: header;
+    text-align: center;
+    padding-bottom: 5%;
+}
+ 
+.art1 { 
+    grid-area: art1; 
+}
+  
+.art2 { 
+    grid-area: art2; 
+}
+
+.art3 { 
+    grid-area: art3; 
+}
+
+.header>img {
+    max-width: 80%;
+    border-radius: 20px;
+}
+
+.header>h1 {
+    font-weight: 1000;
+}
+  
+img {
+    max-width: 100%;
+}
+
+.items {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #d7d8d9;
+    padding: 0 20px 20px 20px;
+    border-radius: 20px;
+}
+
+.items>img {
+    border-radius: 20px;
+}
+
+.items>h1 {
+    color: #6da3c2;
+}
+
+.faqs {
+    padding-top: 10%;
+    grid-area: faqs;
+    text-align: center;
+}
+
+.faqs>h1 {
+    color: #6da3c2;
+}
+
+li {
+    text-align: left;
+    list-style-type: none;
+    color: #6da3c2;
+    font-weight: 500;
+    padding-left: 0;
+    line-height: 1.5;
+}
+
+li:hover {
+    color: black;
+}
+
+.footer {
+    width: 100%;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    align-content: center;
+    background-color: #d7d8d9;
+    flex-grow: 1;
+    padding: 10px 20px;
+}
+
+.contlogofooter {
+    display: flex;
+    text-align: right;
+    align-content: center;
+}
+
+.logo2 {
+    height: 100px;
+    margin: auto;
+    display: block;
+}

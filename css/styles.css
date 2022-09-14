@@ -125,8 +125,18 @@ li {
     line-height: 1.5;
 }
 
+li>div {
+    display: none;
+}
+
 li:hover {
     color: black;
+    font-weight: 1000;
+}
+
+li:hover div {
+    display: block;
+    font-weight: 400;
 }
 
 .footer {

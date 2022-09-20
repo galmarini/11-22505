@@ -1,3 +1,149 @@
+@media all and (min-width: 1000px){
+ 
+    .contenedor {  
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 2%;
+        margin: 0% 10% 10% 10%;
+        grid-auto-flow: row;
+        grid-template-areas:
+          "header header header"
+          "art1 art2 art3"
+          "faqs faqs faqs";
+    }
+
+    .menu {
+        font-size: 1.2rem;
+        width: 100%;
+        display: flex; 
+        flex-direction: row;
+        justify-content:flex-start;
+        column-gap: 2%;
+        padding: 3%;
+        align-content: center;
+    }
+
+    .header { 
+        padding-bottom: 5%;
+    }
+
+    .items>h1 {
+        font-size: 2vw;
+    }
+
+    .footer {
+        padding: 1% 2% 1% 2%;
+        font-size: 0.9rem;
+    }
+}
+
+@media only screen and (min-width: 700px) and (max-width:1000px) {
+ 
+    .contenedor {  
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 2%;
+        margin: 0% 5% 10% 5%;
+        grid-auto-flow: row;
+        grid-template-areas:
+          "header header header"
+          "art1 art2 art3"
+          "faqs faqs faqs";
+    }
+
+    .menu {
+        font-size: 1.2rem;
+        width: 100%;
+        display: flex; 
+        flex-direction: row;
+        justify-content:flex-start;
+        column-gap: 2%;
+        padding: 3%;
+        align-content: center;
+    }
+
+    .header { 
+        padding-bottom: 5%;
+    }
+
+    .items>h1 {
+        font-size: 2.5vw;
+    }
+
+    .footer {
+        padding: 1% 2% 1% 2%;
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+
+    .contenedor{
+         display: grid;
+         grid-template-columns: 1fr;
+         padding: 0% 5% 5% 5%;
+         grid-template-areas:
+             "header"
+             "art1"
+             "art2"
+             "art3"
+             "faqs";
+         gap: 2% 
+    }
+
+    .menu {
+        font-size: 1rem;
+        width: 100%;
+        display: grid; 
+        text-align: right;
+        padding: 5%;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+        "logo ringu"
+        "logo perfil"
+        "logo contacto"
+        "logo registro";
+        position: fixed;
+        background-color: #ebecf0;
+    }
+
+    .contlogo {
+        grid-area: logo;
+        text-align: left;
+    }
+
+    .ringu { 
+        grid-area: ringu; 
+    }
+      
+    .perfil { 
+        grid-area: perfil; 
+    }
+    
+    .contacto { 
+        grid-area: contacto; 
+    }
+
+    .registro { 
+        grid-area: registro; 
+    }
+
+    .header { 
+        margin-top: 50%;
+        padding-bottom: 0%;
+    } 
+
+    .faqs {
+        padding-bottom: 50%;
+    }
+
+    .footer {
+        padding: 1% 2% 1% 2%;
+        font-size: 1.6vw;
+    }
+}
+
+ 
 * {
     box-sizing: border-box;
     color:#36474f
@@ -9,15 +155,11 @@ body {
     background-color: #ebecf0;
 }
 
-.menu {
+
+.header {
     width: 100%;
-    display: flex; 
-    flex-direction: row;
-    justify-content:flex-start;
-    column-gap: 40px;
-    padding: 20px;
-    font-size: 1.2rem;
-    align-content: center;
+    grid-area: header;
+    text-align: center;
 }
 
 a {
@@ -25,12 +167,18 @@ a {
     text-decoration: none;
 }
 
+i {
+    height: 1rem;
+    margin-right: 10%;
+}
+
 .contlogo {
     flex-grow:1;
 }
 
 .logo {
-    height: 50px; 
+    height: 5rem; 
+    grid-area: logo;
 }
 
 .logo:hover {
@@ -44,25 +192,6 @@ a:not(:first-child):hover {
     animation: ease-in;
   }
 
-.contenedor {  
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 0.5fr 1fr;
-    column-gap: 2%;
-    margin: 2% 10% 10% 10%;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "header header header"
-      "art1 art2 art3"
-      "faqs faqs faqs";
-}
-
-.header { 
-    grid-area: header;
-    text-align: center;
-    padding-bottom: 5%;
-}
- 
 .art1 { 
     grid-area: art1; 
 }
@@ -77,7 +206,7 @@ a:not(:first-child):hover {
 
 .header>img {
     max-width: 80%;
-    border-radius: 20px;
+    border-radius: 1rem;
 }
 
 .header>h1 {
@@ -95,15 +224,15 @@ img {
     justify-content: space-between;
     background-color: #d7d8d9;
     padding: 0 20px 20px 20px;
-    border-radius: 20px;
-}
-
-.items>img {
-    border-radius: 20px;
+    border-radius: 1rem;
 }
 
 .items>h1 {
     color: #6da3c2;
+}
+
+.items>img {
+    border-radius: 1rem;
 }
 
 .faqs {
@@ -144,11 +273,11 @@ li:hover div {
     display: flex; 
     flex-direction: row;
     justify-content: space-between;
-    font-size: 0.9rem;
     align-content: center;
     background-color: #d7d8d9;
     flex-grow: 1;
-    padding: 10px 20px;
+    padding: 1% 2% 1% 2%;
+    gap: 5%
 }
 
 .contlogofooter {
@@ -158,7 +287,7 @@ li:hover div {
 }
 
 .logo2 {
-    height: 100px;
+    height: 6rem;
     margin: auto;
     display: block;
 }

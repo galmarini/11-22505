@@ -8,16 +8,16 @@ if (dni > 3000000 && dni < 60000000) {
     console.log("está en el rango");
     if (dni == 30123123) {
         console.log("DNI registrado " + dni);
-        location.href = "/profile.html";
+        location.href = "profile.html";
     }
     else {
         console.log("DNI nuevo " + dni);
-        location.href = "/registro.html";
+        location.href = "registro.html";
     }
 }
 else {
     alert('DNI incorrecto');
-    location.href = "/login.html";
+    location.href = "login.html";
 }
 
 console.log(dni);

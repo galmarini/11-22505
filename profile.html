@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/registro.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://kit.fontawesome.com/8f234f77cf.js" crossorigin="anonymous"></script>
 </head>
@@ -21,31 +21,55 @@
         <a class="registro" href="login.html">Log In/Registro</a></div>
         
     </nav>
-    
+
     <div class="contenedor">
-        <div class="header">
-            <img src="img/pagando.jpg" alt="header">
-            <h1>Te damos la bienvenida al próximo paso</h1>
+        <div class="profile">
+            <img src="https://randomuser.me/api/portraits/women/13.jpg" alt="foto de perfil">
+            <h1>Hola, Natalia</h1>
+        </div>
+
+        <div class="data">
+            <h1>Tus datos:</h1>
+            <p><span id="dni">DNI: 30123123</span><br>
+               Nombre: Natalia Sanchez <a href="#" onclick="alert('Estás seguro/a de editar este campo?')"><i class="fa-solid fa-pencil"></i></a><br> 
+               E-mail: naty@gmail.com <a href="#" onclick="alert('Estás seguro/a de editar este campo?')"><i class="fa-solid fa-pencil"></i></a><br>
+               Domicilio: Av. de los árboles 145, Sarasa, Pcia. de Buenos Aires <a href="#" onclick="alert('Estás seguro/a de editar este campo?')"><i class="fa-solid fa-pencil"></i></a><br>
+               Teléfono: 11-5555-5555 <a href="#" onclick="alert('Estás seguro/a de editar este campo?')"><i class="fa-solid fa-pencil"></i></a></p>
+        </div>
+
+        <div class="servicios">
+            <h1>Tus servicios:</h1>
+            <p>EDENOR <a href="#" onclick="alert('Estás seguro/a de editar este servicio?')"><i class="fa-solid fa-pencil"></i></a><br> 
+               ARBA <a href="#" onclick="alert('Estás seguro/a de editar este servicio?')"><i class="fa-solid fa-pencil"></i></a><br>
+               PERSONAL <a href="#" onclick="alert('Estás seguro/a de editar este servicio?')"><i class="fa-solid fa-pencil"></i></a></p>
+               <button type="button" onclick="alert('Redirigiendo al selector de servicios')">Agregar</button>
         </div>
 
         <div class="items art1">
-            <h1>Registrate</h1>
-            <p>Ingresá tus datos personales. <br>
-            Podés registrar tus medios de pago de preferencia o ingresarlos cada vez que quieras realizar un pago.
-        <br></p>
-            <img src="img/imagen1.jpg" alt="registro">
+            <h1>Próximos vencimientos:</h1>
+            <p>EDENOR 10/10/2022</p>
+            <button type="button" onclick="alert('Redirigiendo al sitio de pago')">Pagar ahora</button>
+            <p><br>ARBA 25/10/2022</p>
+            <button type="button" onclick="alert('Redirigiendo al sitio de pago')">Pagar ahora</button>
+            <p><br>PERSONAL 08/10/2022</p>
+            <button type="button" onclick="alert('Redirigiendo al sitio de pago')">Pagar ahora</button>
         </div>
         <div class="items art2">
-            <h1>Seleccioná tus servicios</h1>
-            <p>Elegí los servicios que quieras agregar. <br> 
-            El sistema te notificará ante cada vencimiento, de acuerdo a tus preferencias.<br></p>
-            <img src="img/imagen2.jpg" alt="servicios">
+            <h1>Tus medios de pago:</h1>
+            <p><br>VISA terminada en 3553<br>
+            MASTERCARD terminada en 1234</p>
+            <button type="button" onclick="prompt('Ingresa el número de tarjeta')">Agregar tarjeta</button>
+            <p><br>BANCO PATAGONIA - Caja de Ahorro<br>
+                BANCO CIUDAD - Caja de Ahorro</p>
+                <button type="button" onclick="prompt('Ingresa el banco')">Agregar cuenta</button>
+            <p><br>Mercado Pago<br>
+            Pago mis cuentas</p>
+            <button type="button" onclick="prompt('Ingresa el nombre del sitio')">Agregar sitio</button>
         </div>
         <div class="items art3">
-            <h1>Despreocupate</h1>
-            <p>No te vas a olvidar más de un vencimiento. <br>
-            Seleccionando "pagar ahora" podrás abonar la factura correspondiente usando uno de los medios de pago cargados a tu perfil o cualquier otro que desees agregar.<br></p>
-            <img src="img/imagen3.jpg" alt="pagos">
+            <h1>Débitos automáticos:</h1>
+            <p>Todavía no agregaste ningún débito automático.</p>
+            <button type="button" onclick="alert('Redirigiendo al selector de servicios')">Agregar</button>
         </div>
 
         <div class="faqs">

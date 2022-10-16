@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto grupo 11</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/registro.css">
+    <script src="https://kit.fontawesome.com/8f234f77cf.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+
+<body>
+    <nav class="menu">
+        <a class="contlogo" href="index.html"><img class="logo" src="img/logo.svg" alt="logo"></a>
+        <a class="ringu" href="index.html">RINGU!</a>
+        <a class="perfil" href="profile.html">Mi Perfil</a>
+        <a class="contacto" href="#">Contacto</a>
+        <a class="registro" href="login.html">Log In/Registro</a></div>
+        
+    </nav>
+
+   
+    <div id="app" class="contenedor">
+
+        <div class="profile">
+            <img src="img/vacio.jpg" alt="foto de perfil">
+            <h1>Hola, {{nombre}}</h1>
+            <p>Email: {{ email }}<br>
+               Domicilio: {{ domicilio }}<br>
+               Teléfono: {{ tel }}</p>
+        </div>
+        <div class="data">
+            <h1>Tus datos:</h1>
+            <p>Nombre: <input type="text" v-model="nombre"><br> 
+               E-mail: <input type="text" v-model="email"><br>
+               Domicilio: <input type="text" v-model="domicilio"><br>
+               Teléfono: <input type="text" v-model="tel"></p>
+        </div>
+
+        <div class="servicios">
+            <h1>Tus servicios:</h1>
+            <p>Todavía no tenés servicios agregados.</p>
+               <button type="button" onclick="alert('Redirigiendo al selector de servicios')">Agregar</button>
+        </div>
+
+            
+    </div>
+    <script>
+        //Creamos nuestra aplicacion.
+        const miAplicacion = Vue.createApp({
+            //DATOS de la aplicacion
+            data() {
+                return {
+                    nombre: "",
+                    email: "",
+                    domicilio: "",
+                    tel: ""
+                        }
+            },
+
+        }).mount("#app")
+    </script>
+    <footer class="footer">
+        <div id="nos"><h2><i class="fa-solid fa-user-group"></i>Sobre nosotros</h2>
+        <p>Somos una empresa copada que acaba de comenzar.</p>
+        </div>
+        <div id="phone"><h2><i class="fa-solid fa-phone"></i>Teléfono</h2>
+        <p>Llamanos a estos números: <br>
+        5555-5555 <br>
+        6666-6666</p>
+        </div>
+        <div id="email"><h2><i class="fa-solid fa-envelope"></i>E-mail</h2> 
+        <p>info@ringu.com.ar</p>
+        </div>
+        <div class="contlogofooter"><img class="logo2" src="img/logo.svg" alt="logo">
+        </div>
+      </footer>
+</body>
+
+</html>

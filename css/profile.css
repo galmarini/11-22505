@@ -7,7 +7,7 @@
         margin: 0% 10% 10% 10%;
         grid-auto-flow: row;
         grid-template-areas:
-          "header header header"
+          "profile data servicios"
           "art1 art2 art3"
           "faqs faqs faqs";
     }
@@ -41,6 +41,10 @@
     .logo2 {
         height: 6rem;
     }
+
+    button {
+    width: 200px;
+    }
 }
 
 @media only screen and (min-width: 700px) and (max-width:1000px) {
@@ -51,7 +55,7 @@
         margin: 0% 5% 10% 5%;
         grid-auto-flow: row;
         grid-template-areas:
-          "header header header"
+          "profile data servicios"
           "art1 art2 art3"
           "faqs faqs faqs";
     }
@@ -85,6 +89,10 @@
     .logo2 {
         height: 6rem;
     }
+
+    button {
+        width: 15vw;
+        }
 }
 
 @media only screen and (max-width: 700px) {
@@ -93,7 +101,9 @@
          grid-template-columns: 1fr;
          padding: 0% 5% 5% 5%;
          grid-template-areas:
-             "header"
+             "profile"
+             "data"
+             "servicios"
              "art1"
              "art2"
              "art3"
@@ -179,6 +189,14 @@
     .logo2 {
         height: 5rem;
     }
+
+    button {
+        width: 200px;
+        }
+
+    .profile {
+        margin-top: 200px;
+    }
 }
 
  
@@ -230,6 +248,19 @@ a:not(:first-child):hover {
     animation: ease-in;
   }
 
+.profile { 
+    grid-area: profile; 
+}
+
+.data { 
+    grid-area: data; 
+}
+
+.servicios { 
+    grid-area: servicios; 
+}
+
+
 .art1 { 
     grid-area: art1; 
 }
@@ -263,7 +294,6 @@ img {
     display: flex;
     text-align: center;
     flex-direction: column;
-    justify-content: space-between;
     background-color: #d7d8d9;
     padding: 0 20px 20px 20px;
     border-radius: 1rem;
@@ -327,4 +357,21 @@ li:hover div {
 .logo2 {
     margin: auto;
     display: block;
+}
+
+button {
+    align-self: center;
+    border-radius: 10px;
+    background-color: #6da3c2;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1rem;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+.fa-pencil {
+    color: #6da3c2;
+    font-size: 0.8rem;
 }

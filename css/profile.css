@@ -177,6 +177,7 @@
     }
     
     .footer {
+        margin-top: 100px;
         display: grid;
         padding: 1% 2% 1% 2%;
         font-size: 0.8rem;

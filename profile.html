@@ -21,22 +21,34 @@
         <a class="registro" href="login.html">Log In/Registro</a></div>
         
     </nav>
+    <script>
 
-    <div class="contenedor">
-        <div class="profile">
-            <img src="https://randomuser.me/api/portraits/women/13.jpg" alt="foto de perfil">
-            <h1>Hola, Natalia</h1>
-        </div>
-
-        <div class="data">
-            <h1>Tus datos:</h1>
-            <p><span id="dni">DNI: 30123123</span><br>
-               Nombre: Natalia Sanchez <a href="#" onclick="alert('Estás seguro/a de editar este campo?')"><i class="fa-solid fa-pencil"></i></a><br> 
-               E-mail: naty@gmail.com <a href="#" onclick="alert('Estás seguro/a de editar este campo?')"><i class="fa-solid fa-pencil"></i></a><br>
-               Domicilio: Av. de los árboles 145, Sarasa, Pcia. de Buenos Aires <a href="#" onclick="alert('Estás seguro/a de editar este campo?')"><i class="fa-solid fa-pencil"></i></a><br>
-               Teléfono: 11-5555-5555 <a href="#" onclick="alert('Estás seguro/a de editar este campo?')"><i class="fa-solid fa-pencil"></i></a></p>
-        </div>
-
+        // Esta función lee los datos remotos, usando fetch
+        function traerDatosAPI() {
+            fetch('https://randomuser.me/api') // API a leer
+                // Cuando ha finalizado la lectura
+                // guardo en datos el texto leido:
+                .then(datos => datos.json()) //res va a guardar el dato mediante el método .json()
+                .then(datos => {
+                    // Y luego copio ese texto en #contenido.
+                    profile.innerHTML +=
+                        `<div class="profile">
+                         <img src = "${datos.results[0].picture.large}" alt="foto de perfil"</img>
+                         <h1>Hola, ${datos.results[0].name.first}</h1></div>
+                         <div class="data">
+                         <h1>Tus datos:</h1>
+                         <p>DNI: 30123123<br>
+                         Nombre: ${datos.results[0].name.last}, ${datos.results[0].name.first} <a href="#" onclick="alert('Estás seguro/a de editar este campo?')"><i class="fa-solid fa-pencil"></i></a><br>    
+                         E-mail: ${datos.results[0].email} <a href="#" onclick="alert('Estás seguro/a de editar este campo?')"><i class="fa-solid fa-pencil"></i></a><br>
+                         Domicilio: ${datos.results[0].location.street.name}, ${datos.results[0].location.street.number}, ${datos.results[0].location.city}, ${datos.results[0].location.country} <a href="#" onclick="alert('Estás seguro/a de editar este campo?')"><i class="fa-solid fa-pencil"></i></a><br>
+                         Teléfono: ${datos.results[0].phone} <a href="#" onclick="alert('Estás seguro/a de editar este campo?')"><i class="fa-solid fa-pencil"></i></a></p>
+                         </p></div>`
+                })
+        }
+        traerDatosAPI();
+    </script>
+    <div id="profile" class="contenedor">
+        
         <div class="servicios">
             <h1>Tus servicios:</h1>
             <p>EDENOR <a href="#" onclick="alert('Estás seguro/a de editar este servicio?')"><i class="fa-solid fa-pencil"></i></a><br> 
@@ -79,13 +91,37 @@
             </p>
             <div><ul>
                 <li>EDENOR
-                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet officiis voluptatem quisquam ratione est quaerat, quas labore reprehenderit praesentium, culpa modi tempore fugit accusamus perferendis libero ex. Recusandae, odio ratione.</div>
+                    <div><p>
+                        24/04/2022 con VISA<br>
+                        20/05/2022 con BANCO CIUDAD<br>
+                        18/06/2022 con VISA<br>
+                        25/07/2022 con BANCO CIUDAD<br>
+                        15/08/2022 con VISA<br>
+                        20/09/2022 con VISA<br>
+                    </p>
+                    </div>
                 </li>
                 <li>AYSA
-                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet officiis voluptatem quisquam ratione est quaerat, quas labore reprehenderit praesentium, culpa modi tempore fugit accusamus perferendis libero ex. Recusandae, odio ratione.</div>
+                    <div><p>
+                        24/04/2022 con VISA<br>
+                        20/05/2022 con BANCO CIUDAD<br>
+                        18/06/2022 con VISA<br>
+                        25/07/2022 con BANCO CIUDAD<br>
+                        15/08/2022 con VISA<br>
+                        20/09/2022 con VISA<br>
+                    </p>
+                    </div>
                 </li>
                 <li>PERSONAL  
-                    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet officiis voluptatem quisquam ratione est quaerat, quas labore reprehenderit praesentium, culpa modi tempore fugit accusamus perferendis libero ex. Recusandae, odio ratione.</div>
+                    <div><p>
+                        24/04/2022 con VISA<br>
+                        20/05/2022 con BANCO CIUDAD<br>
+                        18/06/2022 con VISA<br>
+                        25/07/2022 con BANCO CIUDAD<br>
+                        15/08/2022 con VISA<br>
+                        20/09/2022 con VISA<br>
+                    </p>
+                    </div>
                 </li>
             </ul></div>
             

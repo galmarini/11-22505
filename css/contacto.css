@@ -7,9 +7,8 @@
         margin: 0% 10% 10% 10%;
         grid-auto-flow: row;
         grid-template-areas:
-          "profile data servicios"
-          "art1 art2 art3"
-          "faqs faqs faqs";
+          "profile data data";
+
     }
 
     .menu {
@@ -21,14 +20,6 @@
         column-gap: 2%;
         padding: 3%;
         align-content: center;
-    }
-
-    .header { 
-        padding-bottom: 5%;
-    }
-
-    .items>h1 {
-        font-size: 2vw;
     }
 
     .footer {
@@ -50,14 +41,12 @@
 @media only screen and (min-width: 700px) and (max-width:1000px) {
     .contenedor {  
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 0.5fr;
         column-gap: 2%;
         margin: 0% 5% 10% 5%;
         grid-auto-flow: row;
         grid-template-areas:
-          "profile data servicios"
-          "art1 art2 art3"
-          "faqs faqs faqs";
+          "profile data data";
     }
 
     .menu {
@@ -69,14 +58,6 @@
         column-gap: 2%;
         padding: 3%;
         align-content: center;
-    }
-
-    .header { 
-        padding-bottom: 5%;
-    }
-
-    .items>h1 {
-        font-size: 2.5vw;
     }
 
     .footer {
@@ -103,15 +84,12 @@
          grid-template-areas:
              "profile"
              "data"
-             "servicios"
-             "art1"
-             "art2"
-             "art3"
-             "faqs";
+             "data";
          gap: 2% 
     }
 
     .menu {
+        z-index: 200;
         font-size: 1rem;
         width: 100%;
         display: grid; 
@@ -146,15 +124,6 @@
 
     .registro { 
         grid-area: registro; 
-    }
-
-    .header { 
-        margin-top: 50%;
-        padding-bottom: 0%;
-    } 
-
-    .faqs {
-        padding-bottom: 50%;
     }
 
     .contlogofooter {
@@ -212,21 +181,9 @@ body {
     background-color: #ebecf0;
 }
 
-
-.header {
-    width: 100%;
-    grid-area: header;
-    text-align: center;
-}
-
 a {
     font-weight: 500;
     text-decoration: none;
-}
-
-i {
-    height: 1rem;
-    margin-right: 10%;
 }
 
 .contlogo {
@@ -257,40 +214,6 @@ a:not(:first-child):hover {
     grid-area: data; 
 }
 
-.servicios { 
-    grid-area: servicios; 
-}
-
-
-.art1 { 
-    grid-area: art1; 
-}
-  
-.art2 { 
-    grid-area: art2; 
-}
-
-.art3 { 
-    grid-area: art3; 
-}
-
-.header>img {
-    max-width: 80%;
-    border-radius: 1rem;
-}
-
-.header>h1 {
-    font-weight: 1000;
-}
-
-.profile>img {
-    border-radius: 1rem;
-}
-
-img {
-    max-width: 50%;
-}
-
 .items {
     display: flex;
     text-align: center;
@@ -298,47 +221,6 @@ img {
     background-color: #d7d8d9;
     padding: 0 20px 20px 20px;
     border-radius: 1rem;
-}
-
-.items>h1 {
-    color: #6da3c2;
-}
-
-.items>img {
-    border-radius: 1rem;
-}
-
-.faqs {
-    padding-top: 10%;
-    grid-area: faqs;
-    text-align: center;
-}
-
-.faqs>h1 {
-    color: #6da3c2;
-}
-
-li {
-    text-align: left;
-    list-style-type: none;
-    color: #6da3c2;
-    font-weight: 500;
-    padding-left: 0;
-    line-height: 1.5;
-}
-
-li>div {
-    display: none;
-}
-
-li:hover {
-    color: black;
-    font-weight: 1000;
-}
-
-li:hover div {
-    display: block;
-    font-weight: 400;
 }
 
 .footer {
@@ -351,6 +233,11 @@ li:hover div {
     gap: 5%
 }
 
+.footer i {
+    height: 1rem;
+    margin-right: 10%;
+}
+
 .contlogofooter {
     display: flex;
 }
@@ -360,18 +247,6 @@ li:hover div {
     display: block;
 }
 
-button {
-    align-self: center;
-    border-radius: 10px;
-    background-color: #6da3c2;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 1rem;
-    padding: 10px;
-    cursor: pointer;
-  }
-
 input {
     border-radius: 10px;
     background-color: transparent;
@@ -380,7 +255,19 @@ input {
     font-size: 1rem;
     padding: 10px;
     cursor: pointer;
+    margin-bottom: 30px;
   }
+
+textarea {
+    border-radius: 10px;
+    background-color: transparent;
+    border: 2px solid #6da3c2;
+    width: 100%;
+    height: 300px;
+    font-size: 1rem;
+    padding: 10px;
+    cursor: pointer;
+}
 
 .formulario__grupo-input {
 	position: relative;
@@ -413,7 +300,6 @@ input {
 
 .formulario__checkbox {
 	margin-right: 10px;
-    display: flex;
 }
 
 .formulario__grupo-terminos, 

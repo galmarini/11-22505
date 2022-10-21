@@ -1,27 +1,68 @@
-var dni=0;
-console.log("El DNI inicio es: "+ dni); 
+const formulario = document.getElementById('formulario');
+const inputs = document.querySelectorAll('#formulario input');
 
-dni=prompt("Ingresá tu número de DNI (sin puntos ni espacios"); 
-console.log("El DNI ingresado es: "+ dni); 
-
-if (dni > 3000000 && dni < 60000000) {
-    console.log("está en el rango");
-    if (dni == 30123123) {
-        console.log("DNI registrado " + dni);
-        location.href = "profile.html";
-    }
-    else {
-        console.log("DNI nuevo " + dni);
-        location.href = "registro.html";
-    }
-}
-else {
-    alert('DNI incorrecto');
-    location.href = "login.html";
+const expresiones = {
+    usuario: /^[0-9\_\-]{7,8}$/, // números
+	password: /^.{4,12}$/, // 4 a 12 digitos.
 }
 
-console.log(dni);
+const campos = {
+	usuario: false,
+	password: false,
+}
 
+const validarFormulario = (e) => {
+	switch (e.target.name) {
+        case "usuario":
+			validarCampo(expresiones.usuario, e.target, 'usuario');
+		break;
 
+        case "password":
+			validarCampo(expresiones.password, e.target, 'password');
+			validarPassword2();
+		break;
+	}
+}
 
+const validarCampo = (expresion, input, campo) => {
+	if(expresion.test(input.value)){
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.add('fa-check-circle');
+		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-times-circle');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.remove('formulario__input-error-activo');
+		campos[campo] = true;
+	} else {
+		document.getElementById(`grupo__${campo}`).classList.add('formulario__grupo-incorrecto');
+		document.getElementById(`grupo__${campo}`).classList.remove('formulario__grupo-correcto');
+		document.querySelector(`#grupo__${campo} i`).classList.add('fa-times-circle');
+		document.querySelector(`#grupo__${campo} i`).classList.remove('fa-check-circle');
+		document.querySelector(`#grupo__${campo} .formulario__input-error`).classList.add('formulario__input-error-activo');
+		campos[campo] = false;
+	}
+}
 
+inputs.forEach((input) => {
+	input.addEventListener('keyup', validarFormulario);
+	input.addEventListener('blur', validarFormulario);
+});
+
+formulario.addEventListener('submit', (e) => {
+	e.preventDefault();
+
+	if(campos.usuario && campos.password){
+		formulario.reset();
+
+		document.getElementById('formulario__mensaje-exito').classList.add('formulario__mensaje-exito-activo');
+		setTimeout(() => {
+			document.getElementById('formulario__mensaje-exito').classList.remove('formulario__mensaje-exito-activo');
+		}, 5000);
+
+		document.querySelectorAll('.formulario__grupo-correcto').forEach((icono) => {
+			icono.classList.remove('formulario__grupo-correcto');
+		});
+		window.location.href = 'profile.html';
+	} else {
+		document.getElementById('formulario__mensaje').classList.add('formulario__mensaje-activo');
+	}
+});
